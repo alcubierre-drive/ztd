@@ -18,7 +18,7 @@
 #include <string>
 #include <string_view>
 
-#include <format>
+#include <fmt/core.h>
 
 #include <algorithm>
 
@@ -199,7 +199,7 @@ ztd::join(const std::span<const std::string> span, const std::string_view sep) n
     std::string str;
     for (const std::string_view part : span)
     {
-        str = std::format("{}{}{}", str, part, sep);
+        str = fmt::format("{}{}{}", str, part, sep);
     }
     return str.substr(0, str.size() - sep.size());
 }
@@ -210,7 +210,7 @@ ztd::join(const std::span<const std::string_view> span, const std::string_view s
     std::string str;
     for (const std::string_view part : span)
     {
-        str = std::format("{}{}{}", str, part, sep);
+        str = fmt::format("{}{}{}", str, part, sep);
     }
     return str.substr(0, str.size() - sep.size());
 }

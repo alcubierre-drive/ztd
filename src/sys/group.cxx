@@ -19,7 +19,7 @@
 
 #include <vector>
 
-#include <format>
+#include <fmt/core.h>
 
 #include <grp.h>
 
@@ -44,7 +44,7 @@ ztd::group::name() const noexcept
     {
         return this->gr->gr_name;
     }
-    return std::format("{}", this->gr->gr_gid);
+    return fmt::format("{}", this->gr->gr_gid);
 }
 
 const std::string

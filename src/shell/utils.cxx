@@ -17,7 +17,7 @@
 
 #include <string>
 
-#include <format>
+#include <fmt/core.h>
 
 #include "ztd/internal/string_python.hxx"
 
@@ -30,5 +30,5 @@ ztd::shell::quote(const std::string_view str) noexcept
     {
         return "\"\"";
     }
-    return std::format("\"{}\"", ztd::replace(str, "\"", "\\\""));
+    return fmt::format("\"{}\"", ztd::replace(str, "\"", "\\\""));
 }

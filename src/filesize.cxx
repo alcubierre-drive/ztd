@@ -17,7 +17,7 @@
 
 #include <string>
 
-#include <format>
+#include <fmt/core.h>
 
 #include <array>
 #include <map>
@@ -82,7 +82,7 @@ ztd::FileSize::get_formated_size(u32 precision) const noexcept
     {
         precision = 0;
     }
-    return std::format("{:.{}f} {}", this->unit_size, precision, this->unit_label);
+    return fmt::format("{:.{}f} {}", this->unit_size, precision, this->unit_label);
 }
 
 const std::tuple<f64, std::string>
@@ -191,7 +191,7 @@ ztd::FileSizeSI::get_formated_size(u32 precision) const noexcept
     {
         precision = 0;
     }
-    return std::format("{:.{}f} {}", this->unit_size, precision, this->unit_label);
+    return fmt::format("{:.{}f} {}", this->unit_size, precision, this->unit_label);
 }
 
 const std::tuple<f64, std::string>
