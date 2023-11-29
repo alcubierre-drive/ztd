@@ -36,7 +36,9 @@
 #if defined(ZTD_LOGGER_USE_STD_FORMAT)
 #    define SPDLOG_USE_STD_FORMAT
 #else
-#    define SPDLOG_FMT_EXTERNAL
+#ifndef SPDLOG_FMT_EXTERNAL
+#define SPDLOG_FMT_EXTERNAL
+#endif
 #endif
 
 #include <spdlog/spdlog.h>
